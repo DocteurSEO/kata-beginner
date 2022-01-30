@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    color:white 
+}
+
+.container {
+   display:flex; 
+   flex-direction: column;
+   justify-content: center;
+    align-items: center;
+   background-color: rgba(21, 33, 51, 1);
+   min-height: 25rem;
+
+}
+
+
+
+button{
+background: #FCA311;
+border-radius: 25px;
+border:none; 
+font-size:16px;
+padding: 1em;
+margin-top: 1em;
+}
+
+

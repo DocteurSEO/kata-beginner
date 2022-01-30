@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+   
+}
+
+.container {
+   background-color: black;
+   width: 50%;
+   min-height: 20rem;
+}
+
+
