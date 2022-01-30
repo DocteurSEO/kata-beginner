@@ -27,6 +27,11 @@ header{
 h1{
     font-size: 2.6rem
 }
+
+h2{
+    font-size: 2rem; 
+    
+}
 p{
     margin-top: 1em
 }
@@ -41,3 +46,6 @@ margin-top: 1em;
 }
 
 
+.black{
+    color:black
+}
