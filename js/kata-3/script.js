@@ -1,29 +1,39 @@
-const quotes = ["“L'ignorance mène à la peur, la peur mène à la haine et la haine conduit à la violence. Voilà l'équation” "
-,"“Le courage n'est pas l'absence de peur, mais la capacité de la vaincre” "
-, "“Quand la pauvreté entre par la porte, l'amour s'en va par la fenêtre”", 
-"Il est facile de nager quand on vous tient le menton" , 
-"Le fou semble sage quand il se tait", 
-`"Le bonheur n'est d'avoir tout ce que l'on désire, mais d'apprécier que l'on a."`,
-`"La beauté est dans le regard de celui qui regarde."`]
+const validate = document.querySelector('#validate')
+	const input = document.querySelector('#array')	
+	const list = document.querySelector('#list')
 
-const title = document.getElementById('title')
+	var data = []
 
 
-const ramdomQuotes = () =>{
-    
-    const randomColor = Math.floor(Math.random()*16777215).toString(16);
-    const random = Math.floor(Math.random() * quotes.length-1) + 1
-    title.textContent = quotes[random]
-    title.style.color = '#'+ randomColor
-    
-}
+	validate.addEventListener('click',function(){
+		if (input.value == '') {
+			alert('oups ! ')
+		
+		}else{
+			data.push(input.value)
+			input.value = ''
+		
+			
+			displayArray(data)
+
+			
+		}
+	}) 
+	
+	function displayArray(data){
+
+
+        list.innerText = ''
+		for( i of data ){
+            
+			var li = document.createElement('li')
+			list.appendChild(li)
+			li.innerText = i
+			
+
+		}
 
 
 
-setInterval(() => {
-    
-    ramdomQuotes()
-    
-}, 5000);
 
-
+	}
