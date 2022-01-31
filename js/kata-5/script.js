@@ -8,12 +8,14 @@ const slidingMenu = () => {
     menuToggle.addEventListener('click', function(ev) {
       ev.preventDefault();
      
-      menuToggle.textContent = '🙈'
-      title.textContent = 'Vive le SEO'
+    
 
       if(!body.classList[1]){
         menuToggle.textContent = '🙉'
         title.textContent = 'Vive le Javascript'
+      }else{
+        menuToggle.textContent = '🙈'
+        title.textContent = 'Vive le SEO'
       }
       body.classList.toggle('menu-active');
     });

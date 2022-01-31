@@ -1,26 +1,18 @@
-function playSound(e) {
-    const audio = e.keyCode ?
-    document.querySelector(`audio[data-key="${e.keyCode}"]`) :
-    document.querySelector(`audio[data-key="${this.attributes['data-key'].value}"]`);
-    const key = e.keyCode ?
-    document.querySelector(`.key[data-key="${e.keyCode}"]`) :
-    document.querySelector(`.key[data-key="${this.attributes['data-key'].value}"]`);
-    if (!audio) return; //stops function if not audio element
-    audio.currentTime = 0; //allows multiple presses and starts again
-    audio.play();
-    key.classList.add('playing');
-  };
-  
-  function removeTransition(e) {
-    if (e.propertyName !== 'transform') return;
-    this.classList.remove('playing');
+
+function fetchKantoPokemon(){
+    fetch(`https://pokeapi.co/api/v2/pokemon?limit=20`)
+    .then(response => response.json())
+    .then(allpokemon =>displayPokemon(allpokemon.results))
   }
-  
-  const keys = document.querySelectorAll('.key');
-  
-  keys.forEach(key => {
-    key.addEventListener('transitionend', removeTransition);
-    key.addEventListener('click', playSound);
-  });
-  
-  window.addEventListener('keydown', playSound);
+  fetchKantoPokemon()
+const ul = document.querySelector('ul')
+
+function displayPokemon (pokemons){
+
+    for (i of pokemons){
+        console.log(i)
+        ul.innerHTML += ` <br> <b>${i.name}</b> <br>` 
+    }
+
+}
+
